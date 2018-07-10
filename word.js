@@ -11,9 +11,9 @@ function Word(word) {
         }
     }
     this.showTheLetters = function() {
-		for (var i = 0; i < this.letterArray.length; i++){
-			this.letterArray[i] = new Letter (this.letterArray[i]);
-			this.letterArray[i].showLetter();
+		for (var j = 0; j < this.letterArray.length; j++){
+			this.letterArray[j] = new Letter (this.letterArray[j]);
+			this.letterArray[j].showLetter();
 		}
 	}
 }
@@ -22,3 +22,6 @@ function Word(word) {
 var wordTest = new Word ("spaghetti");
 wordTest.wordSplitter();
 wordTest.showTheLetters();
+
+// Export for Word constructor
+module.exports = Word;
