@@ -1,22 +1,30 @@
+var inquirer = require('inquirer');
+var input = process.argv[2];
+
 //Letter constructor that word.js will call upon
-function Letter(character, isGuessed) {
-    this.character = character;
-    this.isGuessed = isGuessed;
+function Letter(character) {
+    this.character = character.toUpperCase();
+    this.isGuessed = true;
     //this function checks whether to display true character or blank space
     this.showLetter = function () {
         if (this.isGuessed == true) {
-            this.character = character
+            console.log(this.character)
         }
-        else (this.character = "_")
-    }
-    //this function checks whether character input is correct
-    this.isCorrect(input) = function () {
-        if (input === character) {
-            this.isGuessed = true
-        }
+        else console.log("_")
     }
 
+       // this function checks whether character input is correct
+        this.isCorrect = function () {
+            if (this.input === character) {
+                this.isGuessed = true
+            }
+        }
 }
 
-//Export for Letter constructor
-module.exports = letter;
+
+
+var lettertest = new Letter(input);
+lettertest.showLetter();
+
+// Export for Letter constructor
+module.exports = Letter;
