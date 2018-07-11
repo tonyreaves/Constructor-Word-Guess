@@ -13,13 +13,14 @@ function Word(word) {
     this.showTheLetters = function() {
 		for (var j = 0; j < this.letterArray.length; j++){
 			this.letterArray[j] = new Letter (this.letterArray[j]);
-			this.letterArray[j].showLetter();
+			this.letterArray[j].toString();
 		}
 	}
 }
 
 
-var wordTest = new Word ("spaghetti");
+var wordTest = new Word ("punch");
+// letterArray.isCorrect();
 wordTest.wordSplitter();
 wordTest.showTheLetters();
 

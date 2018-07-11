@@ -4,9 +4,9 @@ var input = process.argv[2];
 //Letter constructor that word.js will call upon
 function Letter(character) {
     this.character = character.toUpperCase();
-    this.isGuessed = true;
+    this.isGuessed = false;
     //this function checks whether to display true character or blank space
-    this.showLetter = function () {
+    this.toString = function () {
         if (this.isGuessed == true) {
             console.log(this.character)
         }
@@ -22,9 +22,9 @@ function Letter(character) {
 }
 
 
-
+//a test on showLetter
 var lettertest = new Letter(input);
-lettertest.showLetter();
+lettertest.toString();
 
 // Export for Letter constructor
 module.exports = Letter;
