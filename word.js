@@ -1,6 +1,7 @@
 //calls upon the letter.js file
 var Letter = require("./letter.js");
 
+//defines arrays, underscores
 function Word(word) {
     this.word = word;
     this.letters = [];
@@ -47,7 +48,7 @@ function Word(word) {
 //}
 
 var wordTest = new Word("punch");
-console.log(wordTest.word)
+// console.log(wordTest.word)
 // letterArray.isCorrect();
 console.log(wordTest.letterArray)
 wordTest.wordSplitter();
