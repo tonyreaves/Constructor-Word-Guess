@@ -9,11 +9,11 @@ function Letter(char) {
     //this function checks whether to display true character or blank space
     this.toString = function () {
         if (this.isGuessed == true) {
-            //return?
+            //response
             console.log(this.character)
         }
 
-        //return?
+        //response
         else console.log("_")
     }
 

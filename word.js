@@ -47,13 +47,13 @@ function Word(word) {
     //return true or false, change remaining guesses if false
 //}
 
-var wordTest = new Word("punch");
-// console.log(wordTest.word)
-// letterArray.isCorrect();
-console.log(wordTest.letterArray)
-wordTest.wordSplitter();
-console.log(wordTest.letterArray)
-wordTest.showTheLetters();
+// var wordTest = new Word("punch");
+// // console.log(wordTest.word)
+// // letterArray.isCorrect();
+// console.log(wordTest.letterArray)
+// wordTest.wordSplitter();
+// console.log(wordTest.letterArray)
+// wordTest.showTheLetters();
 
 // Export for Word constructor
 module.exports = Word;
