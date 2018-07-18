@@ -3,6 +3,8 @@ var Word = require("./word.js");
 var figlet = require('figlet');
 var prompt = require('prompt');
 var colors = require('colors');
+var inquirer = require('inquirer');
+var remaining = 7;
 
 //user's input
 var userInput = "";
@@ -65,12 +67,13 @@ function reset() {
 }
 
 function letterPrompt() {
+    reset();
     inquirer.prompt([{
         name: "userLetter",
         type: "input",
         message: "Type a letter".prompt,
         validate: function (value) {
-            if (isCorrect(value)) {
+            if (Letter.Word.isCorrect(value)) {
                 return true;
             } else {
                 return false;
@@ -81,7 +84,7 @@ function letterPrompt() {
         //adds to guessedLetters
         var prevGuessed = false;
         for (var i = 0; i < guessedLetters.length; i++) {
-            if (letterShown === that.guessedLetters[i]) {
+            if (letterShown === this.guessedLetters[i]) {
                 prevGuessed = true;
             }
         }
@@ -104,7 +107,7 @@ function letterPrompt() {
             } else {
                 console.log('Correct!'.debug);
                 //checks to see if user won
-                if (theWord.didWeFindTheWord() === true) {
+                if (theWord() === true) {
                     console.log(theWord.showTheLetters());
                     console.log('You win!'.info);
                     reset();
@@ -119,8 +122,8 @@ function letterPrompt() {
             if (guessesRemaining > 0 && theWord.wordFound === false) {
                 keepPromptingUser();
             } else if (guessesRemaining === 0) {
-                console.log('Game over!');
-                console.log('The word you were guessing was: ' + theWord.word);
+                console.log('You have been defeated!');
+                console.log('The word was: ' + theWord.word);
             }
         } else {
             console.log("You've guessed that letter already. Try again.")
@@ -129,3 +132,4 @@ function letterPrompt() {
     });
 }
 
+letterPrompt();

@@ -23,25 +23,10 @@ function Word(word) {
         }
     
     }
-   
 
-    // this.showTheLetters = function() {
-	// 	for (var j = 0; j < this.letterArray.length; j++){
-	// 		this.letterArray[j] = new Letter (this.letterArray[j]);
-	// 		this.letterArray[j].toString();
-	// 	}
-	// }
 }
 
 
-//need function to display word{,
-//loop thru this.letters
-//for each:
-//call the letter's display();
-//add to display string
-
-//return display string
-//}
 
 //function: make a guess(letter){
     //return true or false, change remaining guesses if false
